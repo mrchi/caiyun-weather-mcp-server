@@ -1,49 +1,54 @@
-# caiyun-weather-mcp-server
+# Caiyun Weather MCP Server
 
-A MCP server that provides access to Caiyun Weather API.
+An MCP server that provides seamless access to the Caiyun Weather API.
 
-## Quickstart
+## Quick Start
 
-First, go to https://platform.caiyunapp.com/login to register and create an API KEY.
+1. **Register and Obtain API Key**:  
+   Visit [Caiyun Platform](https://platform.caiyunapp.com/login) to register and generate your API key.
 
-Clone repo, use `uv` to create python virtual environment, and install requirements
+2. **Clone the Repository and Set Up Environment**:  
+   Clone the repository and use `uv` to create a Python virtual environment and install dependencies.
 
-```
-git clone https://github.com/mrchi/caiyun-weather-mcp-server.git
-cd caiyun-weather-mcp-server/
-uv venv
-uv sync
-```
+   ```bash
+   git clone https://github.com/mrchi/caiyun-weather-mcp-server.git
+   cd caiyun-weather-mcp-server/
+   uv venv
+   uv sync
+   ```
 
-Create a environment variable file to save the API KEY, such as `.env`. 
+3. **Configure Environment Variables**:  
+   Create a `.env` file to store your API key.
 
-```
-CAIYUN_API_KEY="your-key"
-```
+   ```
+   CAIYUN_API_KEY="your-key"
+   ```
 
-Open your client that supports MCP, such as [Claude for Desktop](https://claude.ai/download) or [Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) in VSCode. Config like this:
+4. **Configure MCP Client**:  
+   Open an MCP-compatible client, such as [Claude for Desktop](https://claude.ai/download) or [Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) in VSCode, and configure it as follows:
 
-```json
-{
-    "mcpServers": {
-        "weather": {
-            "command": "uv",
-            "env": {},
-            "args": [
-                "--directory",
-                "<your repo directory>",
-                "run",
-                "--env-file",
-                ".env",
-                "servers/caiyun_weather.py"
-            ]
-        }
-    }
-}
-```
+   ```json
+   {
+       "mcpServers": {
+           "weather": {
+               "command": "uv",
+               "env": {},
+               "args": [
+                   "--directory",
+                   "<your repo directory>",
+                   "run",
+                   "--env-file",
+                   ".env",
+                   "servers/caiyun_weather.py"
+               ]
+           }
+       }
+   }
+   ```
 
-Just ask: 
+5. **Query the Weather**:  
+   Simply ask:  
 
-```
-how about the weather in Tiananmen Square?
-```
+   ```
+   How about the weather in Tiananmen Square?
+   ```
